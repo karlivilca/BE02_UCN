@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business English ESL Course - Unit 2</title>
     
-    <!-- External Libraries -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,101 +20,61 @@
             --light-gray: #f8fafc;
             --correct-color: #10b981;
             --incorrect-color: #ef4444;
-            --subject-color: #3b82f6; /* Blue 600 */
-            --verb-color: #10b981;    /* Green 500 */
-            --object-color: #8b5cf6;  /* Violet 500 */
+            --subject-color: #3b82f6;
+            --verb-color: #10b981;
+            --object-color: #8b5cf6;
         }
         html { scroll-behavior: smooth; }
         * { font-family: 'Lato', sans-serif; }
         body { background-color: var(--light-gray); }
-        
-        .hero-section {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            position: relative; overflow: hidden; background-attachment: fixed;
-        }
-        .hero-section::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: url('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover;
-            background-attachment: fixed; opacity: 0.15; z-index: 1;
-        }
+        .hero-section { background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); position: relative; overflow: hidden; background-attachment: fixed; }
+        .hero-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover; background-attachment: fixed; opacity: 0.15; z-index: 1; }
         .hero-content { position: relative; z-index: 2; }
-        
-        .section-card {
-            background: white; border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            border: 1px solid #e2e8f0;
-        }
-
-        .menu-tile {
-            background: white; border-radius: 12px;
-            text-align: center; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;
-            overflow: hidden; padding: 15px 10px;
-        }
+        .section-card { background: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; }
+        .menu-tile { background: white; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; overflow: hidden; padding: 15px 10px; }
         .menu-tile:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.15); }
         .menu-icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 15px; transition: color 0.3s; }
         .menu-tile:hover .menu-icon { color: var(--secondary-color); }
         .menu-tile h3 { color: var(--primary-color); padding: 10px; margin: 0; font-size: 1.1em; }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white; border: none; border-radius: 8px; padding: 10px 20px;
-            font-weight: 600; transition: all 0.3s ease; cursor: pointer;
-        }
-        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); }
-        
-        .btn-secondary {
-            background: white; color: var(--primary-color); border: 2px solid var(--primary-color);
-            border-radius: 8px; padding: 8px 18px; font-weight: 600;
-            transition: all 0.3s ease; cursor: pointer;
-        }
+        .btn-primary { background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; border: none; border-radius: 8px; padding: 10px 20px; font-weight: 600; transition: all 0.3s ease; cursor: pointer; }
+        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .btn-secondary { background: white; color: var(--primary-color); border: 2px solid var(--primary-color); border-radius: 8px; padding: 8px 18px; font-weight: 600; transition: all 0.3s ease; cursor: pointer; }
         .btn-secondary:hover { background: var(--primary-color); color: white; }
-        
-        .quiz-toggle {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;
-        }
-        .quiz-toggle:hover { transform: translateY(-1px); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); }
+        .quiz-toggle { background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .quiz-toggle:hover { transform: translateY(-1px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
         .quiz-toggle.active { border-radius: 8px 8px 0 0; }
-        
-        .quiz-content {
-            background: white; border-radius: 0 0 8px 8px; border: 1px solid #e2e8f0; border-top: none;
-            max-height: 0; opacity: 0; overflow: hidden; transition: all 0.5s ease;
-        }
-        .quiz-content.active { max-height: 2000px; opacity: 1; padding: 1.5rem; }
-
-        .feedback {
-            font-weight: 600; padding: 8px 12px; border-radius: 6px; margin-top: 8px;
-            display: inline-flex; align-items: center; gap: 8px;
-        }
+        .quiz-content { background: white; border-radius: 0 0 8px 8px; border: 1px solid #e2e8f0; border-top: none; max-height: 0; opacity: 0; overflow: hidden; transition: all 0.5s ease; }
+        .quiz-content.active { max-height: 3000px; opacity: 1; padding: 1.5rem; }
+        .feedback { font-weight: 600; padding: 8px 12px; border-radius: 6px; margin-top: 8px; display: inline-flex; align-items: center; gap: 8px; }
         .feedback.correct { color: var(--correct-color); }
         .feedback.incorrect { color: var(--incorrect-color); }
-        
         .email-sample { background: #f8fafc; border-left: 4px solid var(--secondary-color); border-radius: 8px; }
         .objectives-box { background: #f0f9ff; border-left: 4px solid #3b82f6; border-radius: 8px; }
-        
-        .table-modern { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        .table-modern { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
         .table-modern th { background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%); color: var(--primary-color); font-weight: 700; }
         .table-modern tbody tr:nth-child(even) { background: #f8fafc; }
-        
         .input-modern { border: 2px solid #e2e8f0; border-radius: 8px; padding: 10px 14px; transition: border-color 0.3s ease; }
         .input-modern:focus { outline: none; border-color: var(--secondary-color); }
-
         #floating-progress-panel { position: fixed; bottom: 20px; left: 20px; z-index: 1000; display: none; background-color: var(--primary-color); color: var(--white-color); padding: 10px 15px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); width: 220px; }
+        #floating-progress-panel .progress-label { font-size: 0.8rem; margin-bottom: 4px; }
+        #floating-progress-panel .progress-bar-container { width: 100%; height: 8px; background-color: rgba(255,255,255,0.3); border-radius: 4px; overflow: hidden; }
+        #floating-progress-panel .progress-bar-fill { width: 0%; height: 100%; background-color: var(--secondary-color); transition: width 0.2s linear; }
         .page-nav-buttons { position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: none; flex-direction: column; gap: 10px; }
         .page-nav-buttons button { width: 50px; height: 50px; border-radius: 50%; background-color: var(--primary-color); color: var(--white-color); border: none; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; }
         .page-nav-buttons button:hover { background-color: var(--secondary-color); transform: scale(1.1); }
-        
-        #floating-sound-bank {
-            position: fixed; bottom: 80px; right: 20px; z-index: 1000;
-            display: none;
-            background-color: transparent;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.25);
-            border-radius: 8px;
-        }
-        #floating-sound-bank iframe { border-radius: 8px; }
-
+        /* Vocabulary audio cards */
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; margin-top: 12px; }
+        .vocab-card { background: #f0f9ff; border: 2px solid #bfdbfe; border-radius: 10px; padding: 10px 12px; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; gap: 8px; user-select: none; }
+        .vocab-card:hover { background: var(--secondary-color); color: white; border-color: var(--secondary-color); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(77,153,173,0.3); }
+        .vocab-card .word-text { font-weight: 600; font-size: 0.9em; }
+        .vocab-card .speaker-icon { color: var(--primary-color); font-size: 0.9rem; flex-shrink: 0; }
+        .vocab-card:hover .speaker-icon { color: white; }
+        .vocab-card.playing { background: var(--primary-color); color: white; border-color: var(--primary-color); }
+        .vocab-card.playing .speaker-icon { color: white; animation: pulse-speaker 0.6s ease infinite; }
+        .vocab-section-title { font-weight: 700; color: var(--primary-color); margin: 16px 0 6px; font-size: 1rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 4px; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .animate-fade-in-up { animation: fadeInUp 0.5s ease-out forwards; }
+        @keyframes pulse-speaker { 0%,100% { transform: scale(1); } 50% { transform: scale(1.2); } }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -125,7 +84,7 @@
             <img src="https://ucn.edu.co/wp-content/uploads/2025/03/ucn-logosimbolo.svg" alt="UCN Logo" class="w-56 mx-auto mb-6 filter brightness-0 invert" style="width: 225px;">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">Business English: Unit 2</h1>
             <p class="text-xl mb-6 opacity-90">Understanding Company Profiles</p>
-	    <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm mt-6 opacity-90">
+            <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm mt-6 opacity-90">
                 <span class="flex items-center"><i class="fas fa-clock mr-2"></i>Duration: ~5.5 hours</span>
                 <span class="flex items-center"><i class="fas fa-layer-group mr-2"></i>Beginner Level</span>
                 <span class="flex items-center"><i class="fas fa-bookmark mr-2"></i>Unit 2 of 6</span>
@@ -146,22 +105,10 @@
                     </ul>
                 </div>
                 <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in-up">
-                    <div class="menu-tile p-6" onclick="showSection('vocab-section')">
-                        <i class="fas fa-spell-check menu-icon text-4xl mb-4"></i>
-                        <h3 class="font-bold text-lg">1. Vocabulary</h3>
-                    </div>
-                    <div class="menu-tile p-6" onclick="showSection('reading-section')">
-                        <i class="fas fa-book-open-reader menu-icon text-4xl mb-4"></i>
-                        <h3 class="font-bold text-lg">2. Reading</h3>
-                    </div>
-                    <div class="menu-tile p-6" onclick="showSection('grammar-section')">
-                        <i class="fas fa-pen-ruler menu-icon text-4xl mb-4"></i>
-                        <h3 class="font-bold text-lg">3. Grammar</h3>
-                    </div>
-                    <div class="menu-tile p-6" onclick="showSection('practical-section')">
-                        <i class="fas fa-keyboard menu-icon text-4xl mb-4"></i>
-                        <h3 class="font-bold text-lg">4. Practical Task</h3>
-                    </div>
+                    <div class="menu-tile p-6" onclick="showSection('vocab-section')"><i class="fas fa-spell-check menu-icon text-4xl mb-4"></i><h3 class="font-bold text-lg">1. Vocabulary</h3></div>
+                    <div class="menu-tile p-6" onclick="showSection('reading-section')"><i class="fas fa-book-open-reader menu-icon text-4xl mb-4"></i><h3 class="font-bold text-lg">2. Reading</h3></div>
+                    <div class="menu-tile p-6" onclick="showSection('grammar-section')"><i class="fas fa-pen-ruler menu-icon text-4xl mb-4"></i><h3 class="font-bold text-lg">3. Grammar</h3></div>
+                    <div class="menu-tile p-6" onclick="showSection('practical-section')"><i class="fas fa-keyboard menu-icon text-4xl mb-4"></i><h3 class="font-bold text-lg">4. Practical Task</h3></div>
                 </div>
             </div>
 
@@ -170,21 +117,48 @@
                 <button class="btn-primary mb-6" onclick="showMenu()"><i class="fas fa-arrow-left mr-2"></i>Back to Menu</button>
                 <h2 class="text-3xl font-bold text-gray-800 mb-6">1. Vocabulary Presentation</h2>
                 <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Team discussing company profiles" class="w-full h-64 object-cover rounded-lg shadow-md mb-8">
+                
+                <p class="text-gray-600 mb-4 flex items-center gap-2"><i class="fas fa-volume-up text-blue-500"></i> <em>Click any word to hear its pronunciation.</em></p>
+
                 <div class="grid md:grid-cols-2 gap-8">
                     <div>
-                        <h3 class="font-bold text-lg mb-2">Company Information</h3>
-                        <ul><li>• Company = a business organization</li><li>• Name = what the company is called</li><li>• Location = where the company is (city, country)</li><li>• Address = the street address of the company</li><li>• Headquarters = the main office of a company</li></ul>
-                        <h3 class="font-bold text-lg mt-4 mb-2">What Companies Do</h3>
-                        <ul><li>• Products = things a company makes or sells</li><li>• Services = help or work a company provides</li><li>• Business = the work a company does</li><li>• Industry = the type of business (e.g., technology)</li><li>• Market = the customers who buy products</li></ul>
+                        <div class="vocab-section-title">Company Information</div>
+                        <div class="vocab-grid">
+                            <div class="vocab-card" onclick="speakWord('Company', this)"><i class="fas fa-volume-up speaker-icon"></i><span class="word-text">Company</span></div>
+                            <div class="vocab-card" onclick="speakWord('Name', this)"><i class="fas fa-volume-up speaker-icon"></i><span class="word-text">Name</span></div>
+                            <div class="vocab-card" onclick="speakWord('Location', this)"><i class="fas fa-volume-up speaker-icon"></i><span class="word-text">Location</span></div>
+                            <div class="vocab-card" onclick="speakWord('Address', this)"><i class="fas fa-volume-up speaker-icon"></i><span class="word-text">Address</span></div>
+                            <div class="vocab-card" onclick="speakWord('Headquarters', this)"><i class="fas fa-volume-up speaker-icon"></i><span class="word-text">Headquarters</span></div>
+                        </div>
+                        <div class="vocab-section-title">What Companies Do</div>
+                        <div class="vocab-grid">
+                            <div class="vocab-card" onclick="speakWord('Products', this)"><i class="fas fa-volume-up speaker-icon"></i><span class="word-text">Products</span></div>
+                            <div class="vocab-card" onclick="speakWord('Services', this)"><i class="fas fa-volume-up speaker-icon"></i><span class="word-text">Services</span></div>
+                            <div class="vocab-card" onclick="speakWord('Business', this)"><i class="fas fa-volume-up speaker-icon"></i><span class="word-text">Business</span></div>
+                            <div class="vocab-card" onclick="speakWord('Industry', this)"><i class="fas fa-volume-up speaker-icon"></i><span class="word-text">Industry</span></div>
+                            <div class="vocab-card" onclick="speakWord('Market', this)"><i class="fas fa-volume-up speaker-icon"></i><span class="word-text">Market</span></div>
+                        </div>
                     </div>
                     <div>
-                        <h3 class="font-bold text-lg mb-2">People in Companies</h3>
-                        <ul><li>• Employees = people who work for the company</li><li>• Staff = all the people who work for the company</li><li>• Workers = people who do jobs in the company</li><li>• Manager = a person who leads other employees</li><li>• CEO = the top person in a company</li></ul>
-                        <h3 class="font-bold text-lg mt-4 mb-2">Company Size and Success</h3>
-                        <ul><li>• Small company = few employees (1-50)</li><li>• Large company = many employees (1000+)</li><li>• Successful = doing well, making money</li><li>• International = works in many countries</li><li>• Local = works in one area or city</li></ul>
+                        <div class="vocab-section-title">People in Companies</div>
+                        <div class="vocab-grid">
+                            <div class="vocab-card" onclick="speakWord('Employees', this)"><i class="fas fa-volume-up speaker-icon"></i><span class="word-text">Employees</span></div>
+                            <div class="vocab-card" onclick="speakWord('Staff', this)"><i class="fas fa-volume-up speaker-icon"></i><span class="word-text">Staff</span></div>
+                            <div class="vocab-card" onclick="speakWord('Workers', this)"><i class="fas fa-volume-up speaker-icon"></i><span class="word-text">Workers</span></div>
+                            <div class="vocab-card" onclick="speakWord('Manager', this)"><i class="fas fa-volume-up speaker-icon"></i><span class="word-text">Manager</span></div>
+                            <div class="vocab-card" onclick="speakWord('C.E.O.', this)"><i class="fas fa-volume-up speaker-icon"></i><span class="word-text">CEO</span></div>
+                        </div>
+                        <div class="vocab-section-title">Company Size & Success</div>
+                        <div class="vocab-grid">
+                            <div class="vocab-card" onclick="speakWord('Small company', this)"><i class="fas fa-volume-up speaker-icon"></i><span class="word-text">Small company</span></div>
+                            <div class="vocab-card" onclick="speakWord('Large company', this)"><i class="fas fa-volume-up speaker-icon"></i><span class="word-text">Large company</span></div>
+                            <div class="vocab-card" onclick="speakWord('Successful', this)"><i class="fas fa-volume-up speaker-icon"></i><span class="word-text">Successful</span></div>
+                            <div class="vocab-card" onclick="speakWord('International', this)"><i class="fas fa-volume-up speaker-icon"></i><span class="word-text">International</span></div>
+                            <div class="vocab-card" onclick="speakWord('Local', this)"><i class="fas fa-volume-up speaker-icon"></i><span class="word-text">Local</span></div>
+                        </div>
                     </div>
                 </div>
-                <div class="mt-6"><button onclick="toggleSoundBank()" class="btn-primary"><i class="fas fa-volume-high mr-2"></i>Toggle Audio Bank</button></div>
+
                 <div class="quiz-toggle mt-6" onclick="toggleQuiz(this, 'vocab-quiz-content')"><h3 class="text-xl font-bold"><i class="fas fa-brain mr-3"></i>Vocabulary Exercises</h3><i class="fas fa-chevron-down"></i></div>
                 <div class="quiz-content" id="vocab-quiz-content"><div id="quiz-vocab" class="space-y-4"></div><div class="mt-6"><button onclick="checkQuiz('vocab')" class="btn-primary">Check Answers</button><button onclick="generateQuiz('vocab')" class="btn-secondary ml-2">Try Again</button></div></div>
             </section>
@@ -207,7 +181,7 @@
 
             <!-- Grammar Section -->
             <section id="grammar-section" class="content-section section-card p-6 md:p-8 hidden">
-                 <button class="btn-primary mb-6" onclick="showMenu()"><i class="fas fa-arrow-left mr-2"></i>Back to Menu</button>
+                <button class="btn-primary mb-6" onclick="showMenu()"><i class="fas fa-arrow-left mr-2"></i>Back to Menu</button>
                 <h2 class="text-3xl font-bold text-gray-800 mb-6">3. Grammar Presentation</h2>
                 <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Building blocks representing structure" class="w-full h-64 object-cover rounded-lg shadow-md mb-8">
                 <h3 class="text-2xl font-bold text-gray-800 mb-4">Basic Grammar Structures</h3>
@@ -247,7 +221,7 @@
                 <h3 class="text-xl font-bold text-gray-800 mb-4">Writing Task: Create a Company Profile</h3>
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="bg-gray-50 p-6 rounded-lg border">
-                        <h4 class="font-bold mb-2">Step 1 & 2: Plan Your Company</h4>
+                        <h4 class="font-bold mb-2">Step 1 &amp; 2: Plan Your Company</h4>
                         <p class="text-sm text-gray-600 mb-4">Fill in this information for your imaginary company.</p>
                         <div class="space-y-4">
                             <div><label class="block font-semibold text-gray-700 mb-2">Company Name:</label><input type="text" placeholder="e.g., Creative Solutions" class="input-modern w-full"></div>
@@ -274,102 +248,150 @@
         </main>
     </div>
 
-    <!-- FLOATING UI ELEMENTS -->
     <div id="floating-progress-panel"><div class="progress-label" id="progress-label">Section Progress</div><div class="progress-bar-container"><div class="progress-bar-fill" id="progress-bar"></div></div></div>
-    <div id="floating-sound-bank"><iframe src="https://archive.org/embed/17-large-company" width="320" height="60" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe></div>
     <div class="page-nav-buttons" id="page-nav"><button onclick="goToTop()" title="Go to Top"><i class="fas fa-arrow-up"></i></button><button onclick="goToBottom()" title="Go to Bottom"><i class="fas fa-arrow-down"></i></button></div>
 
     <script>
         const quizPool = {
-            vocab: [ { type: 'match', q: 'Match: Headquarters', a: 'The main office of a company', o: ["Things a company makes", "People who work for a company", "The main office of a company"]}, { type: 'match', q: 'Match: Products', a: 'Things a company makes', o: ["Things a company makes", "The main office", "Help or work a company provides"]}, { type: 'match', q: 'Match: Employees', a: 'People who work for a company', o: ["The customers", "People who work for a company", "The top person"]}, { type: 'fill', q: 'Apple is a famous _______ that makes computers.', a: 'company'}, { type: 'fill', q: 'The _______ of McDonald\'s are in Chicago, USA.', a: 'headquarters'}, { type: 'fill', q: 'Nike makes sports _______ like shoes and clothes.', a: 'products'}, { type: 'fill', q: 'Banks provide financial _______ to their customers.', a: 'services'}, { type: 'choice', q: 'What is the top person in a company called?', a: 'CEO', o: ['Manager', 'Employee', 'CEO']}, { type: 'choice', q: 'A business with 1-50 people is a...', a: 'Small company', o: ['Large company', 'Small company', 'International company']} ],
-            reading: [ { type: 'tf', q: 'TechSolutions is a food company.', a: 'F'}, { type: 'tf', q: 'The company is in California.', a: 'T'}, { type: 'tf', q: 'TechSolutions has 250 employees.', a: 'T'}, { type: 'tf', q: 'Green Foods is a large company.', a: 'F'}, { type: 'tf', q: 'Global Transport has offices in 15 countries.', a: 'T'}, { type: 'choice', q: 'How many employees does Green Foods Ltd. have?', a: '45', o:['250', '45', '5000']}, { type: 'choice', q: 'Where are the headquarters of Global Transport?', a: 'Tokyo, Japan', o:['San Francisco, USA', 'London, England', 'Tokyo, Japan']}, { type: 'choice', q: 'Which company makes software products?', a: 'TechSolutions Inc.', o:['TechSolutions Inc.', 'Green Foods Ltd.', 'Global Transport']} ],
-            grammar: [ { type: 'choice', q: 'Samsung _____ a Korean company.', a: 'is', o: ['is', 'has', 'makes']}, { type: 'choice', q: 'The company _____ many employees.', a: 'has', o: ['is', 'has', 'makes']}, { type: 'choice', q: 'Samsung _____ phones and computers.', a: 'makes', o: ['is', 'has', 'makes']}, { type: 'choice', q: 'The company _____ successful.', a: 'is', o: ['is', 'has', 'makes']}, { type: 'choice', q: 'They _____ offices worldwide.', a: 'have', o:['is', 'has', 'have']}, { type: 'fill', q: 'The company _____ successful. (are/is)', a: 'is' }, { type: 'fill', q: 'They _____ many employees. (has/have)', a: 'have' }, { type: 'fill', q: 'The company _____ cars. (make/makes)', a: 'makes' }, { type: 'fill', q: 'Samsung is located _____ Korea. (at/in)', a: 'in' }, { type: 'fill', q: 'The company _____ services. (provide/provides)', a: 'provides' } ]
+            vocab: [
+                { type: 'match', q: 'Match: Headquarters', a: 'The main office of a company', o: ["Things a company makes", "People who work for a company", "The main office of a company"]},
+                { type: 'match', q: 'Match: Products', a: 'Things a company makes', o: ["Things a company makes", "The main office", "Help or work a company provides"]},
+                { type: 'match', q: 'Match: Employees', a: 'People who work for a company', o: ["The customers", "People who work for a company", "The top person"]},
+                { type: 'fill', q: 'Apple is a famous _______ that makes computers.', a: 'company'},
+                { type: 'fill', q: "The _______ of McDonald's are in Chicago, USA.", a: 'headquarters'},
+                { type: 'fill', q: 'Nike makes sports _______ like shoes and clothes.', a: 'products'},
+                { type: 'fill', q: 'Banks provide financial _______ to their customers.', a: 'services'},
+                { type: 'choice', q: 'What is the top person in a company called?', a: 'CEO', o: ['Manager', 'Employee', 'CEO']},
+                { type: 'choice', q: 'A business with 1-50 people is a...', a: 'Small company', o: ['Large company', 'Small company', 'International company']}
+            ],
+            reading: [
+                { type: 'tf', q: 'TechSolutions is a food company.', a: 'F'},
+                { type: 'tf', q: 'The company is in California.', a: 'T'},
+                { type: 'tf', q: 'TechSolutions has 250 employees.', a: 'T'},
+                { type: 'tf', q: 'Green Foods is a large company.', a: 'F'},
+                { type: 'tf', q: 'Global Transport has offices in 15 countries.', a: 'T'},
+                { type: 'choice', q: 'How many employees does Green Foods Ltd. have?', a: '45', o:['250', '45', '5000']},
+                { type: 'choice', q: 'Where are the headquarters of Global Transport?', a: 'Tokyo, Japan', o:['San Francisco, USA', 'London, England', 'Tokyo, Japan']},
+                { type: 'choice', q: 'Which company makes software products?', a: 'TechSolutions Inc.', o:['TechSolutions Inc.', 'Green Foods Ltd.', 'Global Transport']}
+            ],
+            grammar: [
+                { type: 'choice', q: 'Samsung _____ a Korean company.', a: 'is', o: ['is', 'has', 'makes']},
+                { type: 'choice', q: 'The company _____ many employees.', a: 'has', o: ['is', 'has', 'makes']},
+                { type: 'choice', q: 'Samsung _____ phones and computers.', a: 'makes', o: ['is', 'has', 'makes']},
+                { type: 'choice', q: 'The company _____ successful.', a: 'is', o: ['is', 'has', 'makes']},
+                { type: 'choice', q: 'They _____ offices worldwide.', a: 'have', o:['is', 'has', 'have']},
+                { type: 'fill', q: 'The company _____ successful. (are/is)', a: 'is'},
+                { type: 'fill', q: 'They _____ many employees. (has/have)', a: 'have'},
+                { type: 'fill', q: 'The company _____ cars. (make/makes)', a: 'makes'},
+                { type: 'fill', q: 'Samsung is located _____ Korea. (at/in)', a: 'in'},
+                { type: 'fill', q: 'The company _____ services. (provide/provides)', a: 'provides'}
+            ]
         };
+
         const mainMenuContent = document.getElementById('main-menu-content');
         const allSections = document.querySelectorAll('.content-section');
         const pageNav = document.getElementById('page-nav');
         const progressPanel = document.getElementById('floating-progress-panel');
-        const soundBankPanel = document.getElementById('floating-sound-bank');
         let currentSection = null;
 
         document.addEventListener('DOMContentLoaded', () => { generateQuiz('vocab'); generateQuiz('reading'); generateQuiz('grammar'); });
-        
-        function resetIframes(sectionEl) { if (sectionEl) sectionEl.querySelectorAll('iframe').forEach(iframe => { const src = iframe.src; iframe.src = null; iframe.src = src; }); }
-        
+
         function showMenu() {
-            if (currentSection) resetIframes(currentSection);
             currentSection = null;
             mainMenuContent.style.display = 'block';
             allSections.forEach(s => { s.style.display = 'none'; });
-            window.removeEventListener('scroll', updateProgressBar);
             progressPanel.style.display = 'none';
-            soundBankPanel.style.display = 'none';
+            pageNav.style.display = 'none';
         }
 
         function showSection(id) {
-            if (currentSection) resetIframes(currentSection);
             mainMenuContent.style.display = 'none';
             allSections.forEach(s => { s.style.display = 'none'; });
             currentSection = document.getElementById(id);
-            if(currentSection) {
+            if (currentSection) {
                 currentSection.style.display = 'block';
-                window.addEventListener('scroll', updateProgressBar);
-                progressPanel.style.display = 'block';
-                soundBankPanel.style.display = 'none';
+                window.scrollTo(0, 0);
                 updateProgressBar();
             }
         }
 
-        function toggleSoundBank() { soundBankPanel.style.display = soundBankPanel.style.display === 'block' ? 'none' : 'block'; }
         function toggleQuiz(button, contentId) { button.classList.toggle('active'); document.getElementById(contentId).classList.toggle('active'); setTimeout(updateProgressBar, 500); }
         function goToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
         function goToBottom() { window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }); }
-        
+
         function updateProgressBar() {
             pageNav.style.display = (window.scrollY > 200) ? "flex" : "none";
             if (!currentSection) { progressPanel.style.display = 'none'; return; }
             progressPanel.style.display = 'block';
-            const progressBar = document.getElementById('progress-bar');
-            const progressLabel = document.getElementById('progress-label');
             const sectionTop = currentSection.offsetTop;
             const sectionHeight = currentSection.scrollHeight;
             const viewportHeight = window.innerHeight;
-            const scrollPos = window.scrollY;
-            let percentage = 0;
-            if (scrollPos >= sectionTop - viewportHeight) {
-                const distance = scrollPos + viewportHeight - sectionTop;
-                let total = sectionHeight;
-                if (total < viewportHeight) { total = viewportHeight; }
-                percentage = (distance / total) * 100;
-            }
+            const scrollable = sectionHeight - viewportHeight;
+            let percentage = scrollable <= 0 ? 100 : ((window.scrollY - sectionTop) / scrollable) * 100;
             percentage = Math.max(0, Math.min(percentage, 100));
-            progressBar.style.width = percentage + '%';
-            progressLabel.textContent = `Section ${Math.round(percentage)}% Explored`;
+            document.getElementById('progress-bar').style.width = percentage + '%';
+            document.getElementById('progress-label').textContent = `Section ${Math.round(percentage)}% Explored`;
         }
         window.addEventListener('scroll', updateProgressBar);
 
-        function getShuffledQuestions(type, num) { return quizPool[type].sort(() => 0.5 - Math.random()).slice(0, num); }
-        
+        function speakWord(word) {
+            if (!window.speechSynthesis) { alert('Your browser does not support text-to-speech.'); return; }
+            window.speechSynthesis.cancel();
+            const utter = new SpeechSynthesisUtterance(word);
+            utter.lang = 'en-US'; utter.rate = 0.85;
+            const cards = document.querySelectorAll('.vocab-card');
+            cards.forEach(c => c.classList.remove('playing'));
+            if (event && event.currentTarget) {
+                const card = event.currentTarget;
+                card.classList.add('playing');
+                utter.onend = () => card.classList.remove('playing');
+                utter.onerror = () => card.classList.remove('playing');
+            }
+            window.speechSynthesis.speak(utter);
+        }
+
+        function getShuffledQuestions(type, num) { return [...quizPool[type]].sort(() => 0.5 - Math.random()).slice(0, num); }
+
         function generateQuiz(type) {
             const container = document.getElementById(`quiz-${type}`); if (!container) return;
             const questions = getShuffledQuestions(type, 5); let html = '';
             questions.forEach((q, i) => {
-                let qHtml = `<div class="quiz-question bg-gray-50 p-4 rounded-lg border" data-a="${q.a}"><p class="font-semibold text-gray-800 mb-3"><span class="inline-flex items-center justify-center w-6 h-6 bg-blue-100 text-blue-800 rounded-full text-sm font-bold mr-3">${i + 1}</span>`;
-                if (q.type === 'fill') qHtml += `${q.q.replace(/_+/g, '<input type="text" class="input-modern inline-block w-40 mx-1">')}</p>`;
-                else if (q.type === 'order') qHtml += `Put the words in order: <em class="text-blue-600">${q.q}</em></p><input type="text" class="input-modern w-full mt-2" placeholder="Write the correct sentence...">`;
-                else { qHtml += `${q.q}</p><div class="options mt-3 space-y-2">`; const opts = q.type === 'tf' ? ['T', 'F'] : q.o; opts.forEach(o => { const lbl = q.type === 'tf' ? (o === 'T' ? 'True' : 'False') : o; qHtml += `<label class="flex items-center p-3 bg-white rounded-lg border hover:bg-gray-50 cursor-pointer"><input type="radio" name="q${type}${i}" value="${o}" class="mr-3 text-blue-600 focus:ring-blue-500"><span>${lbl}</span></label>`; }); qHtml += `</div>`; }
-                qHtml += '<div class="feedback mt-3"></div></div>'; html += qHtml;
+                let qHtml = `<div class="quiz-question bg-gray-50 p-4 rounded-lg border" data-type="${q.type}" data-a="${encodeURIComponent(q.a)}"><p class="font-semibold text-gray-800 mb-3"><span class="inline-flex items-center justify-center w-6 h-6 bg-blue-100 text-blue-800 rounded-full text-sm font-bold mr-3">${i + 1}</span>`;
+                if (q.type === 'fill') {
+                    qHtml += `${q.q.replace(/_+/g, '<input type="text" class="input-modern inline-block w-32 mx-1 quiz-fill-input">')}</p>`;
+                } else if (q.type === 'order') {
+                    qHtml += `Put the words in order: <em class="text-blue-600">${q.q}</em></p><input type="text" class="input-modern w-full mt-2 quiz-order-input" placeholder="Write the correct sentence...">`;
+                } else {
+                    qHtml += `${q.q}</p><div class="options mt-3 space-y-2">`;
+                    const opts = q.type === 'tf' ? ['T', 'F'] : q.o;
+                    opts.forEach(o => {
+                        const lbl = q.type === 'tf' ? (o === 'T' ? 'True' : 'False') : o;
+                        qHtml += `<label class="flex items-center p-3 bg-white rounded-lg border hover:bg-gray-50 cursor-pointer"><input type="radio" name="q${type}${i}" value="${o}" class="mr-3 text-blue-600 focus:ring-blue-500"><span>${lbl}</span></label>`;
+                    });
+                    qHtml += `</div>`;
+                }
+                qHtml += '<div class="feedback mt-3"></div></div>';
+                html += qHtml;
             });
             container.innerHTML = html;
         }
+
         function checkQuiz(type) {
             document.querySelectorAll(`#quiz-${type} .quiz-question`).forEach(q => {
-                const ans = q.dataset.a; const fb = q.querySelector('.feedback'); let userAns;
-                const input = q.querySelector('.quiz-input'); const selected = q.querySelector('input:checked');
-                if (input) userAns = input.value.trim().replace(/\.$/, ""); else if (selected) userAns = selected.value;
-                if (userAns === undefined || userAns === "") { fb.innerHTML = `<span class="feedback incorrect">⚠️ Please provide an answer.</span>`; return; }
-                if (userAns.toLowerCase() === ans.toLowerCase().replace(/\.$/, "")) { fb.innerHTML = `<span class="feedback correct">✅️ Correct!</span>`; } 
-                else { fb.innerHTML = `<span class="feedback incorrect">❌ Incorrect. The correct answer is: <strong>${ans}</strong></span>`; }
+                const ans = decodeURIComponent(q.dataset.a);
+                const qType = q.dataset.type;
+                const fb = q.querySelector('.feedback');
+                let userAns;
+                if (qType === 'fill') { const inp = q.querySelector('.quiz-fill-input'); userAns = inp ? inp.value.trim() : ''; }
+                else if (qType === 'order') { const inp = q.querySelector('.quiz-order-input'); userAns = inp ? inp.value.trim() : ''; }
+                else { const sel = q.querySelector('input:checked'); userAns = sel ? sel.value : ''; }
+                if (!userAns) { fb.innerHTML = `<span class="feedback incorrect">⚠️ Please provide an answer.</span>`; return; }
+                const normalize = s => s.toLowerCase().replace(/\.$/, '').trim();
+                if (normalize(userAns) === normalize(ans)) {
+                    fb.innerHTML = `<span class="feedback correct">✅ Correct!</span>`;
+                } else {
+                    fb.innerHTML = `<span class="feedback incorrect">❌ Incorrect. The correct answer is: <strong>${ans}</strong></span>`;
+                }
             });
         }
     </script>
